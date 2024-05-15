@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Messages</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+<form th:action="@{/messages}" method="post">
+    <input type="text" name="message"/>
+    <button type="submit">Submit</button>
+</form>
+<div>
+    <ul>
+        <li th:each="msg : ${messages}">
+            <span th:text="${msg}"></span>
+        </li>
+    </ul>
+</div>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>
